@@ -5,7 +5,7 @@
  */
 
 /*
- * Copyright (c) 2016, Joyent, Inc.
+ * Copyright (c) 2014, Joyent, Inc.
  */
 
 /*
@@ -13,21 +13,11 @@
  */
 
 var App = require('../lib/app');
-var bunyan = require('bunyan');
 var common = require('../lib/common');
 var path = require('path');
-var tritonTracer = require('triton-tracer');
 
 var configFilename = path.join(__dirname, '..', 'config', 'config.json');
-
 common.loadConfig(configFilename, function (error, config) {
-    tritonTracer.init({
-        log: new bunyan({
-            name: 'cnapi',
-            level: 'debug'
-        })
-    }, function (/* session */) {
-        var app = new App(config);
-        app.start();
-    });
+    var app = new App(config);
+    app.start();
 });
