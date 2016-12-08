@@ -18,6 +18,7 @@
     "nodeunit": "0.10.2",
     "once": "1.4.0",
     "restify": "4.3.0",
+    "restify-clients": "git+https://github.com/joshwilsdon/restify-clients.git#rfd-35-cls",
     "restify-validator": "0.3.1",
     "sdc-clients": "git+https://github.com/joyent/node-sdc-clients.git#rfd-35-cls",
     "sprintf": "0.1.5",
